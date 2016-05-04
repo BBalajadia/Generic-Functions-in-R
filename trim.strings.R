@@ -4,6 +4,8 @@
 #     Function to trim leading and/or trailing whitespace in R     
 #####################################################################
 
+http://stackoverflow.com/questions/2261079/how-to-trim-leading-and-trailing-whitespace-in-r
+
 # Arguments:    x - character vector
 #            side - side(s) on which to remove whitespace 
 #                   default : "both"
