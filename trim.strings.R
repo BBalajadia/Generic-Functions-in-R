@@ -12,16 +12,14 @@ http://stackoverflow.com/questions/2261079/how-to-trim-leading-and-trailing-whit
 #                   possible values: c("both", "leading", "trailing")
 
 trim.strings <- function(x, side = "both") { 
-	if (is.na(match(side, c("both", "leading", "trailing")))) { 
-	  side <- "both" 
-	  } 
-	if (side == "leading") { 
-	  sub("^\\s+", "", x)
-	} else { 
-    if (side == "trailing") { 
-    sub("\\s+$", "", x)
-    } else gsub("^\\s+|\\s+$", "", x)
-	} 
+  if (length(side) != 1) {side <- side[1]}
+  if (is.na(match(side, c("both", "leading", "trailing")))) {side <- "both"} 
+  if (side == "leading") { 
+    sub("^\\s+", "", x)
+  } else { 
+    if (side == "trailing") {sub("\\s+$", "", x)}
+    else gsub("^\\s+|\\s+$", "", x)
+  } 
 } 
 
 #--------------------------------------------------------------------
